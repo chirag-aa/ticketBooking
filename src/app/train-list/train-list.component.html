@@ -1,0 +1,41 @@
+<h2>List Of Trains</h2>
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>trainNo</th>
+            <th>startStation</th>
+            <th>endStation</th>
+            <th>trainName</th>
+            <th>deptTimeFromSrc</th>
+            <th>arrTimeAtdesti</th>
+            <th>JourneyDate</th>
+            <th>seats3ac</th>
+            <th>TicketPrice3Ac</th>
+            <th>seats2ac</th>
+            <th>TicketPrice2Ac</th>
+            <th>seatsSl</th>
+            <th>TicketPriceSl</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let item of trainDetail">
+            <td>{{item.trainNo}}</td>
+            <td>{{item.startStation}}</td>
+            <td>{{item.endStation}}</td>
+            <td>{{item.trainName}}</td>
+            <td>{{item.deptTimeFromSrc}}</td>
+            <td>{{item.arrTimeAtdesti}}</td>
+            
+            <td>{{item.dateOfJourney}}</td>     
+            <td>{{item.seats3ac}}</td>
+            <td>{{item.ticketPrice3ac}}</td>
+            <td>{{item.seats2ac}}</td>
+            <td>{{item.ticketPrice2ac}}</td>
+            <td>{{item.seatsSl}}</td>
+            <td>{{item.ticketPricesl}}</td>
+        </tr>
+    </tbody>
+
+</table>

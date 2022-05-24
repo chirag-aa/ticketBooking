@@ -1,0 +1,13 @@
+<h1>News India At A Glance</h1>
+<div style="display: inline-grid; grid-template-columns: repeat(4,350px);">
+<div *ngFor="let item of articlesarr" style="padding: 4px; box-sizing:content-box;">
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{item.urlToImage}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{item.title}}</h5>
+      <p class="card-text">{{item.description}}</p>
+      <a href="{{item.url}}" class="btn btn-primary">Read More</a>
+    </div>
+  </div>
+</div> 
+</div>

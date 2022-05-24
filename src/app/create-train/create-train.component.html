@@ -1,0 +1,87 @@
+<h1>Create Train</h1>
+
+<!-- <th></th>
+            <th>startStation</th>
+            <th>endStation</th>
+            <th>trainName</th>
+            <th></th>
+            <th></th>
+            <th>deptTimeAtSrc</th>
+            <th>arrTimeAtdesti</th>
+            <th>deptTimeAtdesti</th>
+            <th>journeyId</th>
+            <th>seats3ac</th>
+            <th>seats2ac</th>
+            <th>seatsSl</th> -->
+
+
+
+<div class="form-group">
+    <label for="exampleInputEmail1">Train Number</label>
+    <input type="text" class="form-control" id="exampleInpu1" [(ngModel)]="trainNo" />
+
+</div>
+<div class="form-group">
+    <label for="exampleInputEmail1">Train Name</label>
+    <input type="text" [(ngModel)]="trainName" class="form-control">
+
+</div>
+<div class="form-group">
+    <label for="exampleInputPassword1">Start Station</label>
+    <input type="text" [(ngModel)]="startStation" class="form-control">
+</div>
+<div class="form-group">
+    <label for="exampleInputPassword1">End Station</label>
+    <input type="text" [(ngModel)]="endStation" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="exampleInputEmail1">deptTimeAtsrc</label>
+    <input type="text" [(ngModel)]="deptTimeFromSrc" class="form-control">
+
+</div>
+<div class="form-group">
+    <label for="exampleInputEmail1">arrTimeAtdesti</label>
+    <input type="text" [(ngModel)]="arrTimeAtdesti" class="form-control">
+
+</div>
+
+<div class="form-group">
+    <label for="exampleInputEmail1">DateOfJourney</label>
+    <input type="text" [(ngModel)]="dateOfJourney" class="form-control">
+
+</div>
+<div class="form-group">
+    <label for="exampleInputEmail1">seats3ac</label>
+    <input type="text" [(ngModel)]="seats3ac" class="form-control">
+
+</div>
+<div class="form-group">
+    <label for="exampleInputEmail1">ticketPrice3ac</label>
+    <input type="text" [(ngModel)]="ticketPrice3ac" class="form-control">
+
+</div>
+<div class="form-group">
+    <label for="exampleInputEmail1">seats2ac</label>
+    <input type="text" [(ngModel)]="seats2ac" class="form-control">
+
+</div>
+<div class="form-group">
+    <label for="exampleInputEmail1">ticketPrice2ac</label>
+    <input type="text" [(ngModel)]="ticketPrice2ac" class="form-control">
+
+</div>
+<div class="form-group">
+    <label for="exampleInputEmail1">seatsSl</label>
+    <input type="text" [(ngModel)]="seatsSl" class="form-control">
+
+</div>
+<div class="form-group">
+    <label for="exampleInputEmail1">ticketPricesl</label>
+    <input type="text" [(ngModel)]="ticketPricesl" class="form-control">
+
+</div>
+
+<div style="margin-top: 30px;">
+    <button type="submit" class="btn btn-primary" (click)="submitHandler()">Submit</button>
+</div>

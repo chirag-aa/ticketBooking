@@ -1,0 +1,48 @@
+<p>Book Ticket</p>
+<div class="form-group">
+    <label for="exampleInputEmail1">Enter Start Station</label>
+    <input type="text" [(ngModel)]="startStation" class="form-control">
+
+</div>
+<div class="form-group">
+    <label for="exampleInputEmail1">Enter End Station</label>
+    <input type="text" [(ngModel)]="endStation" class="form-control">
+
+</div>
+
+<div class="form-group">
+    <label for="exampleInputEmail1">Enter Date</label>
+    <input type="text" [(ngModel)]="journeyDate" class="form-control">
+
+</div>
+
+<div style="margin-top: 30px; margin-bottom: 30px;">
+    <button type="submit" class="btn btn-primary" (click)="getTrainsBetweenStationswithDates()">Submit</button>
+</div>
+
+<div *ngIf="trainNotExist">
+  <h3>No Trains Found On this date or on This Route search for another day</h3>
+</div>
+<div *ngIf="trainsArr" style="display: inline-grid; grid-template-columns: repeat(4,350px);">
+<div class="card" style="width: 18rem; padding: 10px;" *ngFor="let item of trainsArr">
+    <img class="card-img-top" src="/assets/trainImg.webp" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Train Name:{{item.trainName}}</h5>
+      <p class="card-text">Train Number:{{item.trainNo}}</p>
+      <p class="card-text">Start Station:{{item.startStation}}</p>
+      <p class="card-text">End Station:{{item.endStation}}</p>
+      <p class="card-text">Departure Time:{{item.deptTimeFromSrc}}</p>
+      <p class="card-text">Arrival Time:{{item.arrTimeAtdesti}}</p>
+      <p class="card-text">Date Of Journey:{{item.dateOfJourney}}</p>
+      <p class="card-text">Seats In 3AC:{{item.seats3ac}}</p>
+      <p class="card-text">Price Per Seat:{{item.ticketPrice3ac}} Rs.</p>
+      <p class="card-text">Seats In 2AC:{{item.seats2ac}}</p>
+      <p class="card-text">Price Per Seat:{{item.ticketPrice2ac}} Rs.</p>
+      <p class="card-text">Seats In SL:{{item.seatsSl}}</p>
+      <p class="card-text">Price Per Seat:{{item.ticketPricesl}} Rs.</p>
+      <button type="submit" class="btn btn-primary" (click)="bookingTickets(item)">Book Tickets</button>
+    </div>
+  </div>
+</div>
+
+<app-customer [trainDetail]="trainDetail"></app-customer>

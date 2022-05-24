@@ -1,0 +1,64 @@
+<h3>LINK AADHAR CARD</h3>
+<form (ngSubmit)="createForm()" #signUpForm="ngForm" [formGroup]="signupForm">
+    <div class="form-card">
+        <div class="form-group h-form-style">
+            Aadhar Number <input [(ngModel)]="customerDetail.aadharNo" formControlName="aadharnum" name="aadharnum" type="text" class="form-control"
+                id="emp-name" required />
+            <div class="design" id="name-error" *ngIf="signupForm.get('aadharnum')?.hasError('required')">Name is required!</div>
+            <div class="design" id="name-error" *ngIf="signupForm.get('aadharnum')?.hasError('pattern')">Name cannot have characters or
+                special characters!</div>
+            <div class="design" id="name-error" *ngIf="signupForm.get('aadharnum')?.hasError('minlength')">length must be at least 10 chars
+                long!</div>
+        </div>
+
+
+        <div class="form-group h-form-style">
+            Name <input [(ngModel)]="customerDetail.cname" formControlName="name" name="name" type="text" class="form-control"
+                id="emp-name" required />
+            <div class="design" id="name-error" *ngIf="signupForm.get('name')?.hasError('required')">Name is required!</div>
+            <div class="design" id="name-error" *ngIf="signupForm.get('name')?.hasError('pattern')">Name cannot have numbers or
+                special characters!</div>
+            <div class="design" id="name-error" *ngIf="signupForm.get('name')?.hasError('minlength')">Name must be at least 4 chars
+                long!</div>
+        </div>
+
+        
+           Gender <select [(ngModel)]="customerDetail.gender" formControlName="gender" name="gender" 
+                class="form-control" id="emp-desig" required>
+                <option *ngFor="let item of genderList" value={{item}}>{{item}}</option>
+            </select>
+            <div class="design" id="des-error" *ngIf="signupForm.get('gender')?.hasError('required')">Gender is required!
+            </div>
+        
+
+        
+            Mobile Number <input [(ngModel)]="customerDetail.mobileNumber" formControlName="mobileNumber" type="text" 
+                name="mobileNumber" class="form-control" id="emp-mobile" required>
+
+            <div class="design" id="phone-error" *ngIf="signupForm.get('mobileNumber')?.hasError('required')">Mobile Number is
+                required!</div>
+            <div class="design" id="phone-error" *ngIf="signupForm.get('mobileNumber')?.hasError('pattern')">Mobile Number is
+                invalid!</div>
+
+        
+
+        
+            Email <input [(ngModel)]="customerDetail.email" formControlName="email" type="email" name="email"  id="emp-email"
+                class="form-control" required>
+            <div class="design" id="email-error" *ngIf="signupForm.get('email')?.hasError('required')">Email ID is required!</div>
+            <div class="design" id="email-error" *ngIf="signupForm.get('email')?.hasError('email')">Email ID is invalid!</div>
+        
+
+        
+            Age <input [(ngModel)]="customerDetail.age" formControlName="age" type="text" name="age"  id="emp-age"
+                class="form-control" required>
+            <div class="design" id="age-error" *ngIf="signupForm.get('age')?.hasError('required')">Age is required!</div>
+            <div class="design" id="age-error" *ngIf="signupForm.get('age')?.hasError('pattern')">Invalid age input!</div>
+            <div class="design" id="age-error" *ngIf="signupForm.get('age')?.hasError('min')">Incorrect age input! Accepted only integers of range 20-60!</div>
+            <div class="design" id="age-error" *ngIf="signupForm.get('age')?.hasError('max')">Incorrect age input! Accepted only integers of range 20-60!</div>
+        </div>
+    
+
+    <button type="submit" class="btn btn-primary"  id="addEmployee" [disabled]="signUpForm.invalid">Link
+        Aadhar</button>
+</form>

@@ -1,0 +1,8 @@
+.conatiner{
+  background-image: url('/assets/landingImg.jpg');
+  background-color: aquamarine;
+}
+.back{
+    padding: 3%;
+    margin-left: 10px;
+}

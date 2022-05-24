@@ -1,0 +1,69 @@
+<div *ngIf="trainDetail">
+    <h3>Fill The Form To Book Your Tickets!</h3>
+    <div>
+      
+        <div class="form-group">
+            <label for="exampleInputEmail1">Enter Your Aadhar Number</label>
+            <input type="text" class="form-control" id="aadharNo" [(ngModel)]="aadharNo">
+            <label for="exampleInputEmail2">Choose Coach Type</label>
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="coachOfp1">
+                <option selected>Choose Coach Type</option>
+                <option value="1">Sleeper</option>
+                <option value="2">Two AC</option>
+                <option value="3">Three AC</option>
+            </select>
+            <div>
+                <p>Seats Available :{{seatOfp1}}</p>
+            </div>
+        </div>
+
+    </div>
+    <button (click)="bookTickets()" style="margin-top: 4px;"  class="btn btn-primary">Book Ticket</button>
+    <div *ngIf="aadharDetail">
+    <h3>Please Verify Your Personal Details</h3>
+   <div class="card" style="width: 18rem;">
+   <h5 class="card-title">Name:{{cusName}}</h5>
+   <h5 class="card-title">Age:{{cusage}}</h5>
+   <h5 class="card-title">Gender:{{cusGender}}</h5>
+   <h5 class="card-title">Phone Number:{{cusmob}}</h5>
+   </div>
+   </div>
+   <div *ngIf="!aadharDetail">
+    <h1 style="color: red;">ERROR!</h1>
+    <p style="color: red;">Aadhar Number Field is empty or aadhar number is not entered correctley after entring aadhar number if this error is still on your screen then please register your aadhar number because it does not exist in database click on register to complete e-KYC </p>
+   <button class="btn btn-primary" (click)="registerHandler()">Click here to Register</button>
+   </div>
+   </div>
+
+    <div *ngIf="aadharDetail">
+        <button class="btn btn-primary" style="margin-top: 7px;" (click)="dummyPayNow()">Pay {{priceOfp1}} Rs</button>
+    </div>
+
+    <div *ngIf="paySuccessful">
+        <h2>Your Ticket Is Ready</h2>
+        <h4>Reach the Station 50 Minutes before Departure And Follow the Covid Adivasory</h4>
+    <div class="card" style="width: 18rem;" *ngFor="let item of passengerDetails">
+        <img class="card-img-top" src="/assets/trainImg.webp" alt="Card image cap">
+        <div class="card-body">
+          <h2>Aadhar Number: {{aadharDetail?.aadharNo}}</h2>
+          <h5 class="card-title">Name:{{cusName}}</h5>
+          <h5 class="card-title">Age:{{cusage}}</h5>
+          <h5 class="card-title">Gender:{{cusGender}}</h5>
+          <h5 class="card-title">Phone Number:{{cusmob}}</h5>
+          <h5 class="card-title">Train Name:{{trainDetail?.trainName}}</h5>
+          <h5 class="card-title">Train Number:{{item.cTrainNo}}</h5>
+          <h5 class="card-title">Date of Journey:{{trainDetail?.dateOfJourney}}</h5>
+          <h5 class="card-title">Source:{{trainDetail?.startStation}}</h5>
+          <h5 class="card-title">Departure Time From Source:{{trainDetail?.deptTimeFromSrc}}</h5>
+          <h5 class="card-title">Destination:{{trainDetail?.endStation}}</h5>
+          <h5 class="card-title">Arrival Time At Destination:{{trainDetail?.arrTimeAtdesti}}</h5>
+          <h5 class="card-title">Price Of Ticket:{{priceOfp1}} Rs.</h5>
+          <h5 class="card-title">Seat:14</h5>
+         
+          <a class="btn btn-primary">Happy Journey!</a>
+        </div>
+      </div>
+    </div>
+          
+
+
